@@ -1,45 +1,48 @@
+# 🎶 Music Genre Classification using CNN & LSTM
 
-#🎶 Music Genre Classification (CNN & LSTM Models)
-📌 Project Overview
-This project aims to classify music tracks into genres using the GTZAN dataset, containing 10 genres with 100 audio files each.
+## 📌 Overview
+This project performs music genre classification using the **GTZAN dataset**, which includes 10 genres with 100 audio files each. Two separate deep learning models were built to explore different input modalities:
 
-Two separate deep learning models were implemented:
+- 🖼️ **CNN Model** – Trained on spectrogram images generated from audio files.
+- 🎧 **LSTM Model** – Trained on sequential audio features (MFCCs and more).
 
-CNN Model: Trained on spectrogram images extracted from audio.
+---
 
-LSTM Model: Trained on MFCC features directly from audio files.
+## 📁 Dataset
 
-📁 Dataset
-Name: GTZAN Music Genre Dataset
+- **Name:** GTZAN Music Genre Dataset  
+- **Structure:** 10 genres (`rock`, `pop`, `jazz`, `classical`, etc.), 100 audio files per genre  
+- **Format:** `.wav` files, each 30 seconds long
 
-Structure: 10 genres (rock, pop, jazz, classical, etc.), 100 files per genre
+---
 
-Format: .wav audio files (30 sec each)
+## 🧠 Model Architectures
 
-🧠 Model Approaches
-🖼️ CNN Model (Image-Based)
-Converted audio files into mel spectrogram images
+### 🖼️ CNN Model (Image-Based)
+- Converts audio into **mel spectrogram images**
+- Uses a Convolutional Neural Network to learn spatial frequency patterns
+- Input: 128×128 grayscale spectrogram images
 
-Trained CNN to classify based on visual frequency patterns
+### 🎧 LSTM Model (Audio Feature-Based)
+- Extracts **MFCCs**, **chroma features**, **ZCR**, and **RMS energy**
+- Uses Long Short-Term Memory (LSTM) networks to capture temporal dependencies
+- Input: Time-series audio feature sequences
 
-🎧 LSTM Model (Audio Feature-Based)
-Extracted MFCCs, chroma, ZCR, and other audio features
+---
 
-Trained LSTM to learn time-series patterns across the audio
+## 📊 Visuals & Metrics
 
-✅ Output
-Both models classify tracks into one of the 10 genres
+- Spectrogram image samples
+- MFCC feature plots
+- Training/validation accuracy & loss graphs
+- Confusion matrices for genre prediction
 
-Accuracy and performance evaluated on validation/test sets
+---
 
-Visuals include spectrograms, training graphs, and confusion matrices
+## 🛠️ Tools & Libraries
 
-💾 Tools & Libraries
-Python, TensorFlow/Keras
-
-Librosa (audio processing)
-
-Matplotlib/Seaborn (visualization)
-
-Google Colab (GPU training)
-
+- Python
+- TensorFlow / Keras
+- Librosa (audio processing)
+- Matplotlib / Seaborn (visualizations)
+- Google Colab (for training with GPU support)
